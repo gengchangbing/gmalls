@@ -2,15 +2,14 @@ package com.atguigu.gmall.service.impl;
 
 import com.atguigu.gmall.UserAddress;
 import com.atguigu.gmall.UserInfo;
-import com.atguigu.gmall.UserInfoService;
+import com.atguigu.gmall.service.UserInfoService;
 import com.atguigu.gmall.mapper.UserAddressMapper;
 import com.atguigu.gmall.mapper.UserInfoMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+@com.alibaba.dubbo.config.annotation.Service
 public class UserInfoServiceImpl implements UserInfoService {
 
     @Autowired
@@ -30,6 +29,11 @@ public class UserInfoServiceImpl implements UserInfoService {
         userAddress.setUserId(userId);
         return    userAddressMapper.select(userAddress);
 
+    }
+
+    @Override
+    public UserInfo getUserinforbyId(String id) {
+      return  userInfoMapper.selectByPrimaryKey(id);
     }
 }
 
