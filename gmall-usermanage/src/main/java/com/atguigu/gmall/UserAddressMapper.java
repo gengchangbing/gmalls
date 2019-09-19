@@ -1,4 +1,4 @@
-package com.atguigu.gmall.mapper;
+package com.atguigu.gmall;
 
 import com.atguigu.gmall.UserAddress;
 import tk.mybatis.mapper.common.Mapper;
